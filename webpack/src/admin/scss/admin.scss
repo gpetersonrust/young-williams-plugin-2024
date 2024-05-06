@@ -1,0 +1,124 @@
+.young-williams-report-table,
+.young-williams-report-table * {
+  box-sizing: border-box;
+}
+.young-williams-report-table {
+  background: #202832;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+.report-header {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  height: 40px;
+
+  .text{
+    font-size: 20px;
+  }
+}
+.cell {
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.44);
+  border-width: 0px 1px 0px 0px;
+  padding: 0px 0px 0px 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  height: 28px;
+  position: relative;
+}
+.text {
+  color: #ffffff;
+  text-align: left;
+  font-family: "TimesNewRoman-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: relative;
+  flex: 1;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.report-row {
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.44);
+  border-width: 1px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+    height: 32px;
+
+  .text{
+    font-size: 16px;
+  }
+
+}
+
+.report-row:nth-child(odd) {
+  background: #2b333b;
+}
+svg{
+    cursor: pointer;
+}
+}
+
+
+.young-williams-report-acf-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.young-williams-report-form-group {
+  margin-bottom: 10px;
+}
+
+.young-williams-report-form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.young-williams-report-form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.young-williams-report-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #0073aa;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.young-williams-report-btn-primary {
+  background-color: #0073aa;
+}

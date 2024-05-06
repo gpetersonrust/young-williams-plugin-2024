@@ -1,0 +1,468 @@
+//  add tailwind css
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* , body{
+  // reset margin and padding
+  margin: 0;
+  padding: 0;
+ 
+
+}
+
+
+.pet {
+  box-shadow: none !important;
+  width: 100% !important;
+}
+
+.pet-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pet-card {
+  width: 365px;
+  height: 540px;
+  margin: 1rem .5rem;
+}
+
+
+
+.pet-card a, .pet-card button {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.pet-thumbnail {
+  height: 90%;
+}
+
+
+
+.pet-thumbnail img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.pet-name {
+  background: #23395b;
+  text-align: center;
+  color: #fff;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.pet-post-card{
+  background-color: #fff;
+  border: 1px solid #000;
+  display: flex;
+  height: 200px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 2px #0000002b;
+  // give 2  child divs 50% width
+  & > div {
+    width: 50%;
+  }
+}
+
+// Slide
+
+.animal-layout-slide {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 0 !important;
+  z-index: -5 !important;
+
+  &.active{
+    opacity: 1 !important;
+    z-index: 0 !important;
+  }
+}
+
+
+.x-row.e23880-e10.mifc-1.mifc-2.mifc-5.mifc-6.mifc-a.mifc-c.slider-thumbnail-row {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 200px;
+  width: 100%;
+
+  .x-row-inner{
+    align-items: flex-end;
+  }
+}
+
+.x-col.e23880-e11.mifc-g.mifc-h {
+  display: flex !important;
+  justify-content: flex-end;
+  height: 35%;
+}
+
+.animal-thumbnail-slide{
+  cursor: pointer;
+  border: 1px solid #ffffff00 ;
+  &.active{
+    border: 1px solid #fff !important;
+  }
+}
+
+.heateor_sss_sharing_container.heateor_sss_vertical_sharing.heateor_sss_hide_sharing {
+  top: 200px !important;
+}
+
+.alert-message
+{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  text-align: center;
+
+// start off screen to the left
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  padding: 1rem;
+  
+  p{
+    margin: 0;
+   
+    
+
+    @apply text-base md:text-lg lg:text-xl xl:text-2xl uppercase text-white; 
+  }
+
+  &.success{
+    background: #2a9d8f;
+  }
+  &.error{
+    background: #e76f51;
+  }
+
+  &.progress{ 
+    background: #23395b;
+  }
+
+  &.show{
+    transform: translateX(0);
+  }
+}
+
+.pet-pagination-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+button.pet-pagination-button {
+  width: 50px;
+  height: 50px;
+  background: #23395b;
+  color: #ffffff7d;
+  transition: .5s linear all;
+}
+
+button.pet-pagination-button:hover, button.pet-pagination-button.active {
+  color: #fff;
+  background: #52a499;
+}
+
+.pet-link-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.808);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.pet-single-card {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1050px;
+  width: 90%;
+  box-shadow: 0px 0px 10px 2px #0000003d;
+  border-radius: 10px;
+  padding: clamp(0.75rem, 3vw, 1.25rem);
+  background-color: #fff;
+  flex-wrap: wrap;
+  @apply max-h-[500px] overflow-scroll md:max-h-[750px] md:overflow-auto;
+}
+
+.pet-single-card-column{
+  
+  @apply w-full md:w-[47.5%] ;
+}
+
+.pet-single-card-slider {
+  aspect-ratio: 1/1;
+  position: relative;
+  width: 100%;
+}
+
+.pet-single-card-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -5;
+  transition: 1s opacity linear;
+  &.active{
+    opacity: 1;
+    z-index: 0;
+  
+  }
+}
+
+.pet-single-card-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-single-card-column h2 {
+  font-family: lieberuth, sans-serif;
+  color: #23395b;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  border-bottom: 2px solid;
+  padding-bottom: 2px;
+  margin: 0 0 1rem 0;
+  @apply my-8 md:my-0 pb-2 md:pb-[2px];
+}
+
+.pet-single-data {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &.pet-single-card-stray{
+    @apply justify-start;
+  }
+}
+
+.pet-single-data-column {
+  width: 33%;
+  margin: 1rem 0;
+
+  &.pet-single-card-stray{
+    @apply  my-4;
+  }
+}
+
+.pet-single-data-column h4 {
+  margin: 0 0 .5rem 0;
+  font-size: 1rem;
+  font-family: anago, sans-serif;
+  font-weight: bold;
+  color: #23395b;
+}
+ 
+
+.pet-single-data-column span{
+  font-family: anago, sans-serif;
+  font-size: 1rem;
+}
+.pet-single-card p {
+  font-size: 16px !important;
+  margin: 1rem 0;
+}
+
+.pet-single-data-column span, .pet-single-data-column h4{
+  @apply block text-center;
+}
+
+.pet-single-card-column h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+span.close-modal {
+  cursor: pointer;
+  color: rgb(147 0 0 / 45%);
+  transition: .5s all linear;
+}
+
+span.close-modal:hover {
+  color: rgb(147 0 0);
+}
+
+.animal-slide-arrow {
+  background: #ffffff87 !important;
+  width: 50px !important;
+  height: 50px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  transition: .5s all linear !important;
+}
+
+.animal-slide-arrow:hover {
+  background: #fff !important;
+}
+
+
+  .modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+ 
+
+ 
+button.read-more {
+    text-decoration: underline;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.faq,
+.faq * {
+    box-sizing: border-box;
+}
+
+
+
+.faq-header {
+    background: var(--cello-900, #23395b);
+    padding: var(--padding-6, 24px);
+    display: flex;
+    flex-direction: row;
+    gap: var(--padding-3, 12px);
+    align-items: center;
+     justify-content: space-between;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+
+    
+}
+
+.faq-header-text-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: center;
+ 
+    flex-shrink: 0;
+    position: relative;
+    width: 90%;
+}
+
+.faq-header-text {
+    color: #ffffff;
+    text-align: left;
+    font-family: 'LiebeRuth-Medium', sans-serif;
+   
+    font-weight: 500;
+    position: relative;
+    @apply text-base md:text-lg lg:text-xl ;
+}
+
+.arrow-down-svgrepo-com {
+    flex-shrink: 0;
+    width: 23px;
+    height: 23px;
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+    transition: .15s all linear;
+
+    &.active{
+        transform: rotate(180deg);
+    }
+}
+
+.faq-body {
+    background: var(--breaker-bay-400, #52a499);
+    border-style: solid;
+    border-color: var(--white-50, #ffffff);
+    border-width: 1px 0px 0px 0px;
+    padding: var(--padding-6, 24px) var(--padding-12, 4px) var(--padding-6, 24px) var(--padding-12, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-tokens-x-xs, 16px);
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+
+.faq-body-container-text {
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.faq-body-text {
+    color: #ffffff;
+    text-align: left;
+    font-family: 'HelveticaNeue-Regular', sans-serif;
+    font-size: 16px;
+    line-height: 200%;
+    font-weight: 400;
+    position: relative;
+    flex: 1;
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: 16px;
+
+  &.active{
+    .faq-body{
+      display: flex;
+    }
+  }
+
+  &.active .arrow-down-svgrepo-com{
+    transform: rotate(180deg);
+  }
+  
+}
+.faq-body-text ul {
+  list-style: disc;
+}
